@@ -42,5 +42,5 @@ Route::get('/index', [Indexcontroller::class, 'returnName']);
 
 use App\Http\Controllers\FormController;
 
-Route::view('/form', 'form');
+Route::get('/form', [FormController::class, 'loadForm']);
 Route::post('/form', [FormController::class, 'getData']);

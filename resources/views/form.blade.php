@@ -9,7 +9,7 @@
 <div class="p-2">
     <h1>Form</h1>
     <p>Register as a new user.</p>
-    <form action="form" method="post">
+    <form action="" method="post">
         @csrf
         <input class="col-lg-4" type="text" name="first-name" placeholder="Enter first name" /></input><br><br>
         <input class="col-lg-4"type="text" name="last-name" placeholder="Enter last name" /></input><br><br>
@@ -19,4 +19,7 @@
         <input type="submit" name="submit" value="Submit" /></input>
     </form>
 </div>
+    @isset($input)
+        <p>{{ $input }}</p> 
+    @endisset
 @endsection
