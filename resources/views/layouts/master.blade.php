@@ -11,17 +11,11 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/home">Discovering Laravel</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link {{ Request::is('home') ? 'active' : '' }}" href="/home">Home</a>
-                <a class="nav-item nav-link {{ Request::is('form') ? 'active' : '' }}" href="/form">Form</a>
-            </div>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link {{ Request::is('home') ? 'active' : '' }}" href="/home">Home</a>
+            <a class="nav-item nav-link {{ Request::is('form') ? 'active' : '' }}" href="/form">Form</a>
         </div>
-    </nav>
-    @yield('content')
+    </nav> @yield('content')
     <footer class="footer fixed-bottom bg-dark text-white text-center py-3">&copy; Christophe Adriaensens for BeCode</footer>
 </body>
 
