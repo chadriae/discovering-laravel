@@ -12,6 +12,6 @@
 
 @section('content')
 <h1>Homepage</h1>
-<p>This is my body content.</p>
+<p>Hello, {{ $name }}.</p>
 <p>Go to the form page.</p>
 @endsection

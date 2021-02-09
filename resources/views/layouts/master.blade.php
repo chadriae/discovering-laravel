@@ -12,7 +12,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/home">Discovering Laravel</a>
         <div class="navbar-nav">
-            <a class="nav-item nav-link {{ Request::is('home') ? 'active' : '' }}" href="/home">Home</a>
+            <a class="nav-item nav-link {{ Request::is('home') ? 'active' : '' }}" href="/index">Home</a>
             <a class="nav-item nav-link {{ Request::is('form') ? 'active' : '' }}" href="/form">Form</a>
         </div>
     </nav> @yield('content')

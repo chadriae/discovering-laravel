@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class Indexcontroller extends Controller
 {
-    public function returnTest()
+    public function returnName()
     {
-        return view('welcome');
+        return view('index', ['name' => 'Christophe']);
     }
 }

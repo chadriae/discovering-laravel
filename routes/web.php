@@ -14,12 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::get('/home', function () {
+Route::get('/index', function () {
     return view('index');
-    // return "Hello, world! <br> <img src='https://media1.tenor.com/images/4010a1683879f08a255e7153116a66f1/tenor.gif?itemid=4518485' />";
 });
 
 Route::get('/form', function () {
@@ -29,6 +28,8 @@ Route::get('/form', function () {
 
 // testing the new Indexcontroller function
 // mind the second argument: its not a function but means go to Indexcontroller, find the returnTest() method and execute whatever is in it
-// use App\Http\Controllers\Indexcontroller;
 
-// Route::get('/', [Indexcontroller::class, 'returnTest']);
+use App\Http\Controllers\Indexcontroller;
+
+Route::get('/', [Indexcontroller::class, 'returnName']);
+Route::get('/index', [Indexcontroller::class, 'returnName']);
