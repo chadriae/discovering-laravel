@@ -22,6 +22,7 @@
         </div>
     </nav>
     @yield('content')
+    <footer class="footer fixed-bottom bg-dark text-white text-center py-3">&copy; Christophe Adriaensens for BeCode</footer>
 </body>
 
 </html>
