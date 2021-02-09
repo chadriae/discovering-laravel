@@ -9,14 +9,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/home">Discovering Laravel</a>
-        <div class="navbar-nav">
-            <a class="nav-item nav-link {{ Request::is('home') ? 'active' : '' }}" href="/index">Home</a>
-            <a class="nav-item nav-link {{ Request::is('form') ? 'active' : '' }}" href="/form">Form</a>
-        </div>
-    </nav> @yield('content')
-    <footer class="footer fixed-bottom bg-dark text-white text-center py-3">&copy; Christophe Adriaensens for BeCode</footer>
+    @yield('header')
+    @yield('content')
+    @yield('footer')
 </body>
 
 </html>

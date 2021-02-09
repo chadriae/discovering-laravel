@@ -21,9 +21,14 @@ Route::get('/index', function () {
     return view('index');
 });
 
-Route::get('/form', function () {
-    return view('form');
-});
+// Route::get('/form', function () {
+//     return view('form');
+// });
+
+// Route::get('/succes', function () {
+//     return view('succes');
+// });
+
 
 
 // testing the new Indexcontroller function
@@ -33,3 +38,9 @@ use App\Http\Controllers\Indexcontroller;
 
 Route::get('/', [Indexcontroller::class, 'returnName']);
 Route::get('/index', [Indexcontroller::class, 'returnName']);
+
+
+use App\Http\Controllers\FormController;
+
+Route::view('/form', 'form');
+Route::post('/form', [FormController::class, 'getData']);
