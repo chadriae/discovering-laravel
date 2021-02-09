@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return "Hello, world! <br> <img src='https://media1.tenor.com/images/4010a1683879f08a255e7153116a66f1/tenor.gif?itemid=4518485' />";
 });
