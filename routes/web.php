@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Indexcontroller;
+use App\Http\Controllers\FormController;
 
 
 /*
@@ -16,34 +18,11 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/index', function () {
-    return view('index');
-});
-
-
-Route::get('/users', [UserController::class, 'getAllUsers']);
-
-Route::get('/users/{username}', [UserController::class, 'getUsersEmail']);
-
-// Route::get('/users/{username}', function ($username) {
-//     return 'test';
-// });
-
-
-use App\Http\Controllers\Indexcontroller;
-
 Route::get('/', [Indexcontroller::class, 'returnName']);
 Route::get('/index', [Indexcontroller::class, 'returnName']);
 
+Route::get('/form', [FormController::class, 'createUserForm']);
+Route::post('/form', [FormController::class, 'validateForm']);
 
-Route::get('/form', ['uses' => 'FormController@createUserForm']);
-Route::post('/form', ['uses' => 'FormController@validateForm']);
-
-// use App\Http\Controllers\FormController;
-
-// Route::get('/form', [FormController::class, 'createUserForm']);
-// Route::post('/form', [FormController::class, 'validateForm']);
+Route::get('/users', [UserController::class, 'getAllUsers']);
+Route::get('/users/{username}', [UserController::class, 'getUsersEmail']);
