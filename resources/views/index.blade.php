@@ -1,7 +1,7 @@
-@extends('master')
-@extends('header')
-@extends('footer')
-@extends('meta')
+@extends('interface/master')
+@extends('interface/header')
+@extends('interface/footer')
+@extends('interface/meta')
 
 @section('title', 'Home')
 

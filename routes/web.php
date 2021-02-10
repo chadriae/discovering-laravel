@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\UserController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,18 +24,11 @@ Route::get('/index', function () {
     return view('index');
 });
 
-// Route::get('/form', function () {
-//     return view('form');
-// });
 
-// Route::get('/succes', function () {
-//     return view('succes');
-// });
+Route::get('/users', [UserController::class, 'getAllUsers']);
 
+Route::get('/users/{username}', [UserController::class, 'getUsersEmail']);
 
-
-// testing the new Indexcontroller function
-// mind the second argument: its not a function but means go to Indexcontroller, find the returnTest() method and execute whatever is in it
 
 use App\Http\Controllers\Indexcontroller;
 
