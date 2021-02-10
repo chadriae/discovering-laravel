@@ -25,4 +25,4 @@ Route::get('/form', [FormController::class, 'createUserForm']);
 Route::post('/form', [FormController::class, 'validateForm']);
 
 Route::get('/users', [UserController::class, 'getAllUsers']);
-Route::get('/users/{username}', [UserController::class, 'getUsersEmail']);
+Route::get('/users/{username}', [UserController::class, 'getUsersInfo']);
