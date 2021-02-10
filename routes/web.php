@@ -40,7 +40,10 @@ Route::get('/', [Indexcontroller::class, 'returnName']);
 Route::get('/index', [Indexcontroller::class, 'returnName']);
 
 
-use App\Http\Controllers\FormController;
+Route::get('/form', ['uses' => 'FormController@createUserForm']);
+Route::post('/form', ['uses' => 'FormController@validateForm']);
 
-Route::get('/form', [FormController::class, 'loadForm']);
-Route::post('/form', [FormController::class, 'getData']);
+// use App\Http\Controllers\FormController;
+
+// Route::get('/form', [FormController::class, 'createUserForm']);
+// Route::post('/form', [FormController::class, 'validateForm']);

@@ -4,20 +4,43 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Form;
+
 class FormController extends Controller
 {
-    public function loadForm()
+    // create form
+    public function createUserForm(Request $request)
     {
         return view('form');
     }
 
-    public function getData(Request $request)
+    // store form data in database
+    public function validateForm(Request $request)
 
     {
-        $validated = $request->validate([
-            'first-name' => 'bail|required|unique:posts|max:255'
-        ]);
+        // form validate
+        $this->validate(
+            $request,
+            [
+                'username' => 'required|min:4|max:12',
+                'email' => 'required|email',
+                'password' => 'required|min:6',
+                'confirm_password' => 'required|same:password'
+            ],
+            [
+                'username.required' => 'A username is required.',
+                'email.required' => 'A valid email is required.',
+                'password.required' => 'A password is required.',
+                'confirm_password.same' => "Passwords don't match."
+            ]
+        );
 
-        return $request->input();
+        // encrypt password
+        // $this->bcrypt(['password']);
+
+        // store data in database
+        Form::create($request->all());
+
+        return back()->with('success', 'User created successfully.');
     }
 }
