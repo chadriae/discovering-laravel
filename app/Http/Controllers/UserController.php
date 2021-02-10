@@ -13,18 +13,15 @@ class UserController extends Controller
         // return 'test';
         // $email = \DB::table('users')->where('username', $username)->first();
 
-        $email = Users::where('username', $username)->first();
+        $email = Users::where('username', $username)->firstOrFail();
 
-        return view('users', [
-            'email' => $email
-        ]);
+        return view('user', ['user' => $email]);
     }
 
     public function getAllUsers()
     {
         $data = Users::all();
-
-        // return $users;
+        // return view('users', compact($data));
 
         return view('users', ['users' => $data]);
     }

@@ -29,6 +29,10 @@ Route::get('/users', [UserController::class, 'getAllUsers']);
 
 Route::get('/users/{username}', [UserController::class, 'getUsersEmail']);
 
+// Route::get('/users/{username}', function ($username) {
+//     return 'test';
+// });
+
 
 use App\Http\Controllers\Indexcontroller;
 

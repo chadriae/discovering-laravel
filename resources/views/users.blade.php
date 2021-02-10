@@ -7,12 +7,11 @@
 
 @section('content')
 <div class="p-2">
-    <h1>Succes!</h1>
-    <p>Thank you for registering.</p>
-    {{-- <p>{{ $users }}</p> --}}
+    <h1>Users</h1>
+    <p>A list of all the users on our platform</p>
     <ul>
     @foreach($users as $user)
-    <li>{{ $user['username'] }} - {{ $user['email'] }}</li>
+    <li>{{ $user->username }} - <a href="/users/{{ $user->username }}">More info</a></li>
     @endforeach
     </ul>
 </div>
