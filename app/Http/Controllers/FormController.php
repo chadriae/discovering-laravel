@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 use App\Models\Form;
+use App\Models\User;
+
 
 class FormController extends Controller
 {
@@ -39,7 +42,13 @@ class FormController extends Controller
         // $this->bcrypt(['password']);
 
         // store data in database
-        Form::create($request->all());
+        // Form::create($request->all());
+
+        User::create([
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
         return back()->with('success', 'User created successfully.');
     }
