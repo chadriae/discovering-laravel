@@ -21,8 +21,12 @@ use App\Http\Controllers\FormController;
 Route::get('/', [Indexcontroller::class, 'returnName']);
 Route::get('/index', [Indexcontroller::class, 'returnName']);
 
-Route::get('/form', [FormController::class, 'createUserForm']);
-Route::post('/form', [FormController::class, 'validateForm']);
+Route::view('register', 'register');
+// Route::get('/register', [FormController::class, 'createUserForm']);
+Route::post('/register', [FormController::class, 'validateForm']);
+Route::post('/register', [FormController::class, 'addUser']);
 
 Route::get('/users', [UserController::class, 'getAllUsers']);
 Route::get('/users/{username}', [UserController::class, 'getUsersInfo']);
+
+Route::get('delete/{username}', [UserController::class, 'deleteUser']);

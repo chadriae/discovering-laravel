@@ -17,7 +17,7 @@
         </div>
     @endif
 
-    <form method="post" action="{{ action('FormController@validateForm') }}">
+    <form method="post" action="">
         @csrf
         <div class="form-group">
             <label>Username:</label><br>
@@ -29,9 +29,12 @@
         <div class="form-group">
             <label>Email:</label><br>
             <input class="col-lg-4" type="text" name="email" placeholder="Enter a valid email address" class="form-group" /></input>
-            @if ($errors->has('email'))
+            {{-- @if ($errors->has('email'))
                 <span class="text-danger">{{ $errors->first('email') }}</span>
-            @endif
+            @endif --}}
+            @error('email')
+              <span class="text-danger">{{ $errors->first('email') }}</span>
+            @enderror
         </div><br>
         <div class="form-group">
             <label>Enter a password:</label><br>

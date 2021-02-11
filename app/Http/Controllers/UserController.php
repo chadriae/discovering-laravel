@@ -19,4 +19,11 @@ class UserController extends Controller
         $user = Users::where('username', $username)->firstOrFail();
         return view('user', compact('user'));
     }
+
+    public function deleteUser($username)
+    {
+        $user = Users::where('username', $username)->firstOrFail();
+        $user->delete();
+        return back()->with('success', "User deleted successfully.");
+    }
 }

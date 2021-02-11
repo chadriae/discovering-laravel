@@ -7,11 +7,12 @@
 
 @section('content')
 <div class="p-2">
-    <h1>Detail page of <br>{{ $user->username }}</h1>
-    <ul>  
+    <h1>Detail page of <br><em>{{ $user->username }}</em></h1>
+    <br>
+    <ul> 
         <li>Email address is: {{ $user->email }}</li>
         <li>Account created on: {{ $user->created_at }}</li>
     </ul>
-    <a href="/users"><button>Go back</button></a>
+    <a href="/users"><button type="button" class="btn btn-secondary">Go back</button></a>
 </div>
 @endsection

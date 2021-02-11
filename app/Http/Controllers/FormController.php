@@ -5,23 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-use DB;
-
 // use App\Models\Form;
+use DB;
 use App\Models\User;
 
 
 class FormController extends Controller
 {
     // create form
-    public function createUserForm(Request $request)
+    public function createUserForm()
     {
-        return view('form');
+        return view('register');
     }
 
     // store form data in database
     public function validateForm(Request $request)
-
     {
         // form validate
         $this->validate(
@@ -39,19 +37,20 @@ class FormController extends Controller
                 'confirm_password.same' => "Passwords don't match."
             ]
         );
+    }
 
-        // encrypt password
-        // $this->bcrypt(['password']);
-
-        // store data in database
-        // Form::create($request->all());
-
+    public function addUser(Request $request)
+    {
+        // \DB::table('users')->insert([
+        //     'username' => $request->username,
+        //     'email' => $request->email,
+        //     'password' => Hash::make($request->password)
+        // ]);
         User::create([
             'username' => $request->username,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'password' => Hash::make($request->password)
         ]);
-
-        return back()->with('success', 'User created successfully.');
+        return back()->with('success', "User created successfully.");
     }
 }
