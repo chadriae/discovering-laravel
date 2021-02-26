@@ -6,9 +6,14 @@
 @section('title', 'Home')
 
 @section('content')
-<div class="p-4">
-    <h1>Homepage</h1>
-    <p>Hello, {{ $name }}.</p>
-    <p>Go to the form page.</p>
+<div class="container">
+    <div class="row">
+        <div class="col border">
+            Here you will see all the info about the page. test
+        </div>
+        <div class="col border" id="image">
+            <img src="{{asset("./images/vinyl-collection.jpg")}}">
+        </div>
+    </div>
 </div>
 @endsection
